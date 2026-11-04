@@ -8,3 +8,7 @@ def test_home():
 def test_health():
     r = app.test_client().get("/health")
     assert r.get_json() == {"status": "UP"}
+
+def test_version():
+    r = app.test_client().get("/version")
+    assert r.get_json() == {"version": "1.0.0"}
